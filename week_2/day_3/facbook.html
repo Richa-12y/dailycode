@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .body{
+        width:100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+         justify-content: center;
+    }
+    .gray{
+        width: 100%;
+        height: 900px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: gray;
+        align-items: center;
+    }
+    .fab{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 70%;
+        height: 100%;    
+        align-items: center;    
+        font-size: 30px;
+    }
+    .card{
+        display:flex;
+        width: 400px; 
+        height:400px;
+        background-color:white; 
+        flex-direction:column;
+        align-items:center;
+         justify-content: center;
+         border-radius: 12px;
+         box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    }
+    .input{
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        height: 100%;
+        justify-content: space-evenly;
+        text-align: center;
+        
+    }
+    .fblogo{
+        width: 50%;
+        
+    }
+    .Signup{
+        display: flex;
+       width: 100%; 
+       justify-content: center;
+
+    }
+    .cardarrange{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+    }
+</style>
+
+<body>
+    <div class="body">
+        <div class="gray">
+            <div class="fab">
+                <div class="fblogo">
+                    <h1 style="color: blue;">Facbook</h1>
+                    <p style="color: black;">Facebook लोगों से जुड़ने और शेयर करने में आपकी मदद करता है</p>
+                </div>
+                <div class="cardarrange">
+                 <div class="card">
+                       <div class="input">           
+                           <input type="text" id="Email" placeholder="Email or phone " style="height: 50px;"/>
+                           <input type="password" id="password" placeholder="password " style="height: 50px;"/>
+                           <button style="background-color:blue; height: 50px;">Signup</button>
+                           <a href="#" style="font-size: 12px;">Forget password</a>
+                          <hr style="color: gray; width: 100%; height: 1px;"/>
+                          <div class="Signup">
+   
+                              <button style="background-color:green; height: 50px; width: 150px;">Signup</button>
+                          </div>
+   
+                       </div>      
+                </div>
+
+                 <p style="font-size: 15px;">किसी प्रसिद्ध व्यक्ति, बैंड या व्यवसाय के लिए एक पेज बनाएँ.</p>
+             </div>
+
+
+            </div>
+        
+        </div>
+    </div>
+</body>
+</html>
