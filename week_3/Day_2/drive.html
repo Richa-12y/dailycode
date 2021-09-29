@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .pren{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .box{
+            background-color: blue;
+            height: 450px;
+            width: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 12px;
+        
+        }
+        button{
+            margin-top: 4px;
+        }
+
+    </style>
+</head>
+    <div class="pren">
+        <div class="box">
+            <input type="number" placeholder="Enter Your age" id="getAge"/>
+            <button onclick="checkAge()">Submit Here</button>
+            <p id="yourAge" style="color: cornsilk;">You can check your  driving age </p>
+        </div>
+    </div>
+<body>
+    <script>
+        function checkAge(){
+
+                var a= document.getElementById("getAge").value;
+
+
+                if(a>18)
+                {
+                    document.getElementById("yourAge").innerHTML="u are eligible for drive ";
+
+                }
+                else{
+                    document.getElementById("yourAge").innerHTML="u are not eligible for drive ";
+
+                  }
+                
+        }
+    </script>
+</body>
+</html>
