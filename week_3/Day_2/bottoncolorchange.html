@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .pren{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .box{
+            background-color: blue;
+            height: 450px;
+            width: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 12px;
+        
+        }
+        button{
+            margin-top: 4px;
+        }
+
+    </style>
+</head>
+    <div class="pren">
+        <div class="box">
+            <input type="text" placeholder="Enter  your color name" id="getColor"/>
+            <button onclick="checkColor()">Submit Here</button>
+            <p id="yourColor" style="color: white;">How you doing?</p>
+        </div>
+    </div>
+<body>
+    <script>
+        function checkColor(){
+
+                var color= document.getElementById("getColor").value;
+                document.getElementById("yourColor").style.color= color;       
+        }
+    </script>
+</body>
+</html>
