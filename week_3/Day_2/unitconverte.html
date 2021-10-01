@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .pren{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .box{
+            background-color: #04041f;
+            height: 450px;
+            width: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 12px;
+        
+        }
+        button{
+            margin-top: 4px;
+        }
+
+    </style>
+</head>
+    <div class="pren">
+        <div class="box">
+
+            <select id = "continent_select">
+                <option value = "Length"> Length </option>	
+                <option value = "Temp"> Temp </option>	
+                <option value = "Volume"> Volume </option>	
+            </select>
+
+            <select id = "from_convert">
+                <option value = "Meter"> Meter </option>	
+                <option value = "Kilometer"> Kilometer </option>	
+                <option value = "Mile"> Mile </option>	
+                <option value = "LightYear"> Light Year </option>	
+                <option value = "Celsius"> Celsius </option>	
+                <option value = "Kelvin"> Kelvin </option>	
+                <option value = "Fahrenheit">Fahrenheit</option>	
+                <option value = "Liter"> Liter </option>
+                <option value = "Milliliter">Milliliter</option>
+            </select>
+
+
+            <select id = "to_convert">
+                <option value = "Meter"> Meter </option>	
+                <option value = "Kilometer"> Kilometer </option>	
+                <option value = "Mile"> Mile </option>	
+                <option value = "Celsius"> Celsius </option>	
+                <option value = "Kelvin"> Kelvin </option>	
+                <option value = "Fahrenheit">Fahrenheit</option>	
+                <option value = "Liter"> Liter </option>
+                <option value = "Milliliter">Milliliter</option>
+            </select>
+
+
+            <input type="text" placeholder="Enter  your value" id="getValue"/>
+
+            <button onclick="checkColor()">Submit Here</button>
+            <p id="setValue" style="color: white;">Here is your output</p>
+        </div>
+    </div>
+<body>
+    <script>
+        function checkColor(){
+
+                var a= document.getElementById("continent_select").value;  
+                
+                var b= document.getElementById("from_convert").value;  
+
+                var c= document.getElementById("to_convert").value;  
+
+                var d= Number(document.getElementById("getValue").value);  
+                console.log(d) ; 
+            if(a=="Length"){
+                if(b==c){
+                    document.getElementById("setValue").innerHTML=d;
+                }
+                else if(b=="Meter"&& c=="Kilometer"){
+
+                    document.getElementById("setValue").innerHTML=d/1000;
+                }
+                else if(b=="Meter"&& c=="Mile"){
+
+                  document.getElementById("setValue").innerHTML=d/1609.344;
+                }
+
+                else if(b=="Kilometer"&& c=="Meter"){
+
+                document.getElementById("setValue").innerHTML=d*1000;
+                }
+
+
+                else if(b=="Kilometer"&& c=="Kilometer"){
+
+                 document.getElementById("setValue").innerHTML=d;
+                }
+
+                else if(b=="Kilometer"&& c=="Mile"){
+
+                    document.getElementById("setValue").innerHTML=d*0.6214;
+                } 
+
+                 else if(b=="Kilometer"&& c=="Mile"){
+
+                    document.getElementById("setValue").innerHTML=d*0.6214;
+                }
+
+                else if(b=="Mile"&& c=="Meter"){
+
+                      document.getElementById("setValue").innerHTML=d*1609.344;
+                }
+
+
+                else if(b=="Mile"&& c=="Kilometerle"){
+
+                    document.getElementById("setValue").innerHTML=d*1.609344;
+                }
+
+                else if(b=="Mile"&& c=="Mile"){
+
+                    document.getElementById("setValue").innerHTML=d;
+                }
+
+            }
+            if(a=="Temp"){
+                if(b==c){
+                    document.getElementById("setValue").innerHTML=d;
+                }
+                else if(b=="Celsius" && c=="Kelvin"){
+                    document.getElementById("setValue").innerHTML=d+273.15;
+
+                }
+                 else if(b=="Celsius" && c=="Fahrenheit"){
+                    document.getElementById("setValue").innerHTML=d+38.8;
+
+                }
+                else if(b=="Kelvin" && c=="Celsius"){
+                    document.getElementById("setValue").innerHTML=d-273.15;
+
+                }
+                else if(b=="Kelvin" && c=="Fahrenheit"){
+                    document.getElementById("setValue").innerHTML=d-38.8;
+
+                }
+                else if(b=="Kelvin" && c=="Kelvin"){
+                    document.getElementById("setValue").innerHTML=d;
+
+                }
+                else if(b=="Fahrenheit" && c=="Celsius"){
+                    document.getElementById("setValue").innerHTML=(d-32)*5/9;
+
+                }
+                else if(b=="Fahrenheit" && c=="Kelvin"){
+                    document.getElementById("setValue").innerHTML=(d-32)*5/9+273.15;
+
+                }
+                else if(b=="Fahrenheit" && c=="Fahrenheit"){
+                    document.getElementById("setValue").innerHTML=d;
+
+                }
+            }
+            if(a=="Volume"){
+                if(b==c){
+                    document.getElementById("setValue").innerHTML=d;
+                }
+                else if(b=="Liter" && c=="Milliliter"){
+                    document.getElementById("setValue").innerHTML=d*1000;
+
+                }
+
+                else if(b=="Milliliter" && c=="Liter"){
+                    document.getElementById("setValue").innerHTML=d/1000;
+
+                }
+
+                else if(b=="Milliliter" && c=="Milliliter"){
+                    document.getElementById("setValue").innerHTML=d;
+
+                }
+
+                
+
+            }
+               
+        }
+    </script>
+</body>
+</html>
