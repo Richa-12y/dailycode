@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .pren{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .box{
+            background-color:red;
+            height: 500px;
+            width: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 12px;
+        
+        }
+        .ball{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        button{
+            margin-top: 4px;
+        }
+        </style>
+</head>
+</head>
+     <div class="pren">
+      <div class="box">
+          <div class="ball">
+              <img src="http://cdn.shopify.com/s/files/1/0012/8797/9121/products/CDBK15Ball_20Velocity_20Ball_20Red_1024x1024.jpg?v=1534338478" alt="ball" style="width: 200px; height: 300px; border-radius: 15px;"/>
+              <p id="demo1" style="color: white;font-weight:bold;">Follow Your Dreams</p>
+              <p id="demo2" style="color:white;font-weight: bold;">Aim for the moon.if you miss,you may be hit a Star.</p>
+          </div>
+        <button onclick="changeBlack()">Change 1 Black</button>
+        <button onclick="changeBlue()">Change 2 Blue</button>
+        <button onclick="changeGreen()">Change Green</button>
+          
+      </div>
+          
+    </div>
+
+<body>
+    <script>
+        function changeBlack() {
+        document.getElementById("demo1").style.color = "Black";
+       }
+
+        function changeBlue() {
+        document.getElementById("demo2").style.color = "Blue";
+        }
+
+       function changeGreen() {
+       document.getElementById("demo1").style.color = "green";
+       document.getElementById("demo2").style.color = "green";
+      }
+    </script>
+    
+</body>
+</html>
