@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="demo"> double click the button! </button>
+    <h1 id="changeColor">My color should change when I double click the button! tag must change to a random color.</h1>
+</body>
+
+<script>
+    var colorBox=["red","green","blue"]
+    var cnst=0
+    
+    const btn = document.getElementById("demo");
+      function backgroundChange(){
+          document.getElementById("changeColor").style.color=colorBox[cnst];
+          if(cnst==2){
+               cnst=0;
+          }
+          else{
+              cnst++;
+          }
+      }
+      btn.addEventListener("dblclick",backgroundChange)
+      </script>
+
+</html>

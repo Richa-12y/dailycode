@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <button id="clickMe">Click me to change my color to an array value!</button>
+     <p id="changeColor">Backgroundcolor is change</p>
+</body>
+        <script>
+             var colorBox=["red","green","blue"]
+             var cnst=0
+             
+             const btn = document.getElementById('clickMe');
+               function backgroundChange(){
+                   document.getElementById("changeColor").style.backgroundColor=colorBox[cnst];
+                   if(cnst==1){
+                        cnst=0;
+                   }
+                   else{
+                       cnst++;
+                   }
+               }
+                btn.addEventListener("click",backgroundChange)
+                btn.removeEventListner("click",backgroundChange)
+        </script>
+</html>
