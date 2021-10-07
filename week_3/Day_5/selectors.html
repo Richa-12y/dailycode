@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="colorCall()">Click here to change the heading color</button>
+    <h1>Hi i'm h1</h1>
+    <h2>h1 i'm h2</h2>
+    <h3>hi i'm h3</h3>
+        
+
+    <p class="red">How u doing?</p>
+    <p class="red">r u fine</p>
+
+    <p class="blue">How u doing?</p>
+    <p class="blue">r u fine</p>
+
+    <p class="hotpink">How u doing?</p>
+    <p class="hotpink">r u fine</p>
+    <button onclick="colorCallred()">Click here to change Red</button>
+    <button onclick="colorCallblue()">Click here to change Blue</button>
+    <button onclick="colorCallhotpink()">Click here to change Hotpink</button>
+
+</body>
+<script>
+    function colorCall()
+    {
+        var selectTag = document.querySelector("h1")
+        selectTag.style.color = "red";
+
+        var selectTagh2 = document.querySelector("h2")
+        selectTagh2.style.color = "blue";
+
+        var selectTagh3 = document.querySelector("h3")
+        selectTagh3.style.color = "hotpink";
+    }
+
+    function colorCallred()
+    {
+        var selectTag = document.querySelectorAll(".red")
+        for(var i=0;i<selectTag.length;i++)
+        {
+            var p=selectTag[i]
+            p.style.color = "red";
+
+        }
+    }
+    function colorCallblue()
+    {
+        var selectTag = document.querySelectorAll(".blue")
+        for(var i=0;i<selectTag.length;i++)
+        {
+            var p=selectTag[i]
+            p.style.color = "blue";
+
+        }
+    }
+
+    function colorCallhotpink()
+    {
+        var selectTag = document.querySelectorAll(".hotpink")
+        for(var i=0;i<selectTag.length;i++)
+        {
+            var p=selectTag[i]
+            p.style.color = "hotpink";
+
+        }
+    }
+</script>
+
+</html>

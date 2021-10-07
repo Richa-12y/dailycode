@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="colorCallred()">Click here to created H1</button>
+    <button onclick="colorCallblue()">Click here to created H3</button>
+    <button onclick="colorCallhotpink()">Click here to created Multiple Div</button>
+
+</body>
+     <script>
+         function colorCallred(){
+            var selectTag = document.createElement("h1")
+            selectTag.textContent = "Hi i'm fine";
+            var p=document.querySelector("body")
+            p.appendChild(selectTag)
+
+         }
+
+         function colorCallblue(){
+            var selectTag = document.createElement("h3")
+            selectTag.textContent = "A Transformation in education! ";
+            var p=document.querySelector("body")
+            p.appendChild(selectTag)
+
+            var selectTag2 = document.createElement("h3")
+            selectTag2.textContent = "Learn to earn, pay when you get. ";
+            var p=document.querySelector("body")
+            p.appendChild(selectTag2)
+
+
+         }
+     </script>
+</html>
