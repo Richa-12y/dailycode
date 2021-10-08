@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Methods</title>
+</head>
+
+<body>
+    <p>Convert string to lower case:</p>
+    <button onclick="myFunction()" style="background-color: blue; border-radius: 12;">Try it</button>
+    <p id="demo">HAY,HOW YOU DOING?</p>
+</body>
+<script>
+    function myFunction()
+    {
+        var text = document.getElementById("demo").innerHTML;
+        document.getElementById("demo").innerHTML =  text.toLowerCase();
+        document.getElementById("demo").style.color="red";
+
+
+    }
+
+</script>
+
+</html>

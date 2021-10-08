@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The slice() Method</title>
+</head>
+
+<body>
+    <button onclick="Slice()">slice extracts a part of a string and returns the extracted part in a new string.</button>
+    <p id="demo"></p>
+
+</body>
+<script>
+    function Slice()
+    {
+
+        var str = "Apple, Banana, Kiwi";
+        document.getElementById("demo").innerHTML = str.slice(7,13); 
+    }
+
+</script>
+
+</html>
