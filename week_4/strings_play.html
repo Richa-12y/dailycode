@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="stringPlay()">click here for Remove Spaces</button>
+    <button onclick="upparCase()" id="upparCase">click here for Convert Uppar Case </button>
+    <button onclick="lowerCase()"id="lowerCase">CLICK HERE FOR CONVERT LOWER CASE </button>
+    <button onclick="mirrorCase()"id="mirrorCase">CLICK HERE FOR MIRROR  CASE </button>
+
+
+    <p id="removeSpace">my text</p>
+    <p id="output"></p>
+    
+
+</body>
+<script>
+    
+    function stringPlay()
+    {
+        var output=""
+        var text = document.getElementById("removeSpace").innerHTML
+        for (i = 0; i < text.length; i++)
+        {
+            if(text[i]!=" ")
+            {
+                output=output+text[i]
+            }
+        }
+        document.getElementById("output").innerHTML=output 
+    }
+   function upparCase(){
+       
+    var text = document.getElementById("upparCase").innerHTML
+    var upp=text.toLocaleUpperCase()
+    document.getElementById("output").innerHTML=upp 
+
+
+   }
+
+   function lowerCase(){
+       
+       var text = document.getElementById("lowerCase").innerHTML
+       var low=text.toLowerCase()
+       document.getElementById("output").innerHTML=low 
+   
+   
+      }
+
+      function mirrorCase()
+    {
+        var output=""
+        var text = document.getElementById("removeSpace").innerHTML
+        for (i = text.length; i>0; i--)
+        {
+            
+                output=output+text[i]
+            
+        }
+        document.getElementById("output").innerHTML=output 
+    }
+   
+</script>
+
+</html>

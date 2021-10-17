@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="AddCastMember()">Click here for Movie Information</button>
+    <button onclick="CastChange()">Click here for Cast Change</button>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+
+</body>
+<script>
+
+    var movie = {
+        name: "u r my sunsine",
+        Director: "Lee min Ho",
+        Year: 2010,
+        Rating: "5.8Imdb",
+        Cast: ["park shine hay", "park shine hay", "Leo", "park shine hay", "park shine hay"]
+
+
+    }
+
+    function AddCastMember()
+    {
+        document.getElementById("demo").innerHTML = movie.name
+        document.getElementById("demo1").innerHTML = movie.Director
+        document.getElementById("demo2").innerHTML = movie.Year
+        document.getElementById("demo3").innerHTML = movie.Rating
+        document.getElementById("demo4").innerHTML = movie.Cast
+
+    }
+
+    function CastChange()
+    {
+        movie.Cast = ["Richa", "Reone"]
+        document.getElementById("demo4").innerHTML = movie.Cast
+
+    }
+
+
+</script>
+
+</html>

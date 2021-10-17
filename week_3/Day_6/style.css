@@ -65,6 +65,21 @@ input{
     box-shadow: 0 1rem 1rem -0.7rem rgba(0,0,0,0.4);
 
 }
+#showScored h3{
+    font-size: 3rem;
+    text-align: center;
+}
+#showScored.btn{
+    margin-top: 2rem;
+    background-color: #55efc4;
+    color: #2d3436;
+}
+
+#showScored.btn :hover{
+    margin-top: 2rem;
+    background-color: #00b894;
+    color: #fff;
+}
 .scoreArea{
     display: none;
 }
