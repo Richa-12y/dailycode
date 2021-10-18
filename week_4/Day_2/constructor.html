@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .outerDiv {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Box {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(17, 0, 255);
+        justify-content: center;
+        width: 400px;
+        height: 500px;
+        gap: 5px;
+        align-items: center;
+
+
+    }
+
+    input {
+        height: 20px;
+        width: 90%;
+    }
+
+    #mm {
+        color: white;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="outerDiv">
+        <div class="Box">
+
+            <input placeholder="1st Name" id="1stN" />
+            <input placeholder="Last Name" id="lN" />
+            <input type="date" placeholder="dateOfBirth" id="DOB" />
+            <input type="number" placeholder="balance" id="num" />
+            <input placeholder="accountNumber" id="AN" />
+            <input placeholder="sharedAccountHolders" id="SA" />
+            <botton id="mm" onclick="mmm()"> Click here</botton>
+
+            <p id="m"></p>
+            <p id="n"></p>
+
+            <p id="p"></p>
+            <p id="q"></p>
+
+            <p id="r"></p>
+            <p id="s"></p>
+
+
+
+        </div>
+
+
+    </div>
+
+</body>
+<script>
+
+    function Person(fstN, LastName, dateOfBirth, balance, accountNumber, sharedAccountHolders)
+    {
+        this.fstN = fstN;
+        this.LastName = LastName
+        this.dateOfBirth = dateOfBirth
+        this.balance = balance
+        this.accountNumber = accountNumber
+        this.sharedAccountHolders = sharedAccountHolders
+
+    }
+    function mmm()
+    {
+        var fstName = document.getElementById("1stN").value
+        var lN = document.getElementById("lN").value
+        var DOB = document.getElementById("DOB").value
+        var num = document.getElementById("num").value
+        var AN = document.getElementById("AN").value
+        var SA = document.getElementById("SA").value
+
+        var sid = new Person(fstName, lN, DOB, num, AN, SA);
+        console.log(sid)
+
+        document.getElementById("m").innerHTML = sid.fstN
+        document.getElementById("n").innerHTML = sid.LastName
+        document.getElementById("p").innerHTML = sid.dateOfBirth
+        document.getElementById("q").innerHTML = sid.balance
+        document.getElementById("r").innerHTML = sid.accountNumber
+        document.getElementById("s").innerHTML = sid.sharedAccountHolders
+
+
+
+
+    }
+</script>
+
+</html>
