@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    label {
+    /* Other styling... */
+   display:block; 
+}
+.allContainer{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.displayContainer{
+  display:block;
+  float:right;
+  padding-right: 30%;
+
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:cadetblue;
+    color:white;
+    font-weight: bold;
+    height: 500px;
+    width: 700px;
+    gap: 5px;
+    border-radius: 12px;
+}
+
+p{
+  padding-top: 2%;
+  white-space: pre-line;
+}
+</style>
+<body>
+  <div class = "allContainer">
+    <div class = "displayContainer">
+      <h2> Person Display </h2>
+      <div class = "paraContainer"> </div>
+    </div>
+    <h1>Click the button to see all the values of the object! </h1>
+    <button id = "printObject">Click here to print the values of the object!</button>
+    <div id = "outputContainer"> </div>
+    <button id = "addHobby" style="margin-top: 5px;">Click here to add a hobby!</button>
+    <input id ="hobbyInput" type = "text" style="margin-top: 5px;"/>
+
+    <h1> Create new person objects </h1>
+    <div class = "inputContainer">
+      <label for = "name">Name</label>
+      <input type="text" name = "name" class = "personInput"/>
+
+      <label for = "age">Age</label>
+      <input type="text" name = "Age" class = "personInput"/>
+
+      <label for = "height">Height</label>
+      <input type="text" name = "height" class = "personInput"/>
+
+      <label for = "gender">Gender</label>
+      <input type="text" name = "gender" class = "personInput"/>
+
+      <label for = "name">Hobbies (Comma separated!</label>
+      <input type="text" name = "name" class = "personInput"/>
+
+      <label for = "submit">Submit Information:</label>
+      <button name = "submit" id = 'submitBtn'>Submit</button>
+
+      <label for = "displayPeople">Display All People</label>
+      <button name = "displayPeople" id = 'displayBtn'>Display All Poeple</button>
+    </div>
+  </div>
+</body>
+<script>
+    
+//Code for printing the values of the object below!
+//This is the sid object
+var sid = {
+    name : "Sidharth",
+    age : 100,
+    height: "6 Ft 12 In",
+    gender : "Female",
+    hobbies: ["Coding", "Weight Lifting", "Running", "Eating"],
+    getDetails: function(){
+        // This function adds all the keys and values of the object and returns a string called output
+        var output = ''
+        for(key in this){
+          output += key + ":" + sid[key] + "\n"
+          if(key == 'hobbies') break;
+        }
+        return output 
+    }
+};
+//This is the function the button listener calls that prints the values of the object to a <p> tag. 
+
+function printObjPara(){
+  var container = document.querySelector('#outputContainer')
+  var outputString = sid.getDetails()
+  
+  var outputPara = document.createElement('p')
+  
+  outputPara.innerText = outputString
+  container.innerHTML = ''
+  container.appendChild(outputPara)
+}
+
+var btnObj = document.querySelector('#printObject');
+
+btnObj.addEventListener('click', printObjPara)
+
+//Code for printing the values of the object above!
+
+//Code for modifying the an object property below!
+
+//Lets add a function to our sid object!
+
+sid.addHobby = function(hobby){
+  this.hobbies.push(hobby)
+}
+
+function hobbyBtnFunction(){
+  var hobbyString = document.querySelector('#hobbyInput').value;
+  
+  sid.addHobby(hobbyString);
+}
+
+var hobbyBtn = document.querySelector('#addHobby');
+
+hobbyBtn.addEventListener('click', hobbyBtnFunction);
+
+
+//Code for modifying the an obejct property object above!
+
+
+/* THE CODE FOR CONSTRUCTORS IS BELOW. CREATE NEW PERSON OBJECTS IS BELOW!
+   IGNORE THE CODE ABOVE FOR SESSION 2!!!!!
+   THE CODE MOST RELEVANT TO SESSION 2 IS BELOW!
+*/
+
+//Code for a person constructor below!
+
+function Person(name, age, height, gender, hobbies){
+  this.name = name;
+  this.age = age;
+  this.height = height;
+  this.gender = gender;
+  this.hobbies = hobbies;
+  // This function returns a string with all the properties of the object
+  this.getDetails = function(){
+    var output = ''
+    for(key in this){
+      output += key + ":" + this[key] + "\n"
+      if(key == 'hobbies') break;
+     }
+     return output // Output is a string!
+   }
+}
+
+var personArr = [] // This array contains all the Person Objects!
+
+//This is the function that creates a person object and pushes that object into the personArr
+function createPerson(){
+  var inputs = document.querySelectorAll('.personInput') // This will return an array of all the input objects with the class = "personInput"
+  var newPerson = new Person()// This creates an empty Person() object
+  var i = 0 //This is a counter for each of the input boxes
+  for(key in newPerson){
+    if(newPerson[key] == undefined){ //This checks if the key has an undefined value
+      if(key != 'hobbies')  {
+        newPerson[key] = inputs[i].value // This adds value to the empty Person object
+      }
+      else {
+        newPerson[key] = inputs[i].value.split(',')
+      }
+      inputs[i].value = '' // Reset all the input values to empty string
+      i++
+    }
+  }
+  personArr.push(newPerson) // Add the new person to the array
+}
+//This function displays all the Person objects in the personArr
+function displayAll(){
+  var displayContainer = document.querySelector('.paraContainer') 
+  displayContainer.innerHTML = ''
+  for(var i = 0; i < personArr.length;i++){ // Here we loop through all the objects in the personArr
+    var displayPara = document.createElement('p') // We create a new p tag
+    displayPara.textContent = personArr[i].getDetails() // We call the getDeatils function for each object get a string and set the p tags innertext to the returned string
+    displayContainer.appendChild(displayPara) //Append the new p tag to the displayContainer
+  }
+}
+
+var submitBtn = document.querySelector('#submitBtn')
+submitBtn.addEventListener('click', createPerson) // This is the listener for the submit button
+
+var displayBtn = document.querySelector('#displayBtn')
+displayBtn.addEventListener('click',displayAll) // This is the listener for the display all people button
+
+//Code for a person constructor below!
+
+
+
+</script>
+</html>

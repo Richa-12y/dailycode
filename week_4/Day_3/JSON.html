@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="convertintojson()">Click here to print the JSON object</button>
+    <p id="display"></p>
+</body>
+<script>
+
+    var emp =
+
+    {
+        "Employees": [
+            {
+                "userId": "sqwert",
+                "jobTitleName": "Developer",
+                "firstName": "Sam",
+                "lastName": "Pat",
+                "preferredFullName": "Samuel Patrick",
+                "employeeCode": "E1",
+                "region": "CA",
+                "phoneNumber": "123-4567890",
+                "emailAddress": "abc@gmail.com"
+            },
+            {
+                "userId": "amir1337",
+                "jobTitleName": "Front-end Developer",
+                "firstName": "Amir",
+                "lastName": "Khan",
+                "preferredFullName": "Amir Khan",
+                "employeeCode": "E2",
+                "region": "MA",
+                "phoneNumber": "098-7654321",
+                "emailAddress": "xyz@gmail.com"
+            }
+        ],
+        "count": 2
+    }
+    function convertintojson(){
+        var output=JSON.stringify(emp)
+        document.getElementById("display").innerText=output
+    }
+
+
+
+</script>
+
+</html>
