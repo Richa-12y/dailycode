@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Here are some array methods that accept functions as arguments! The output is in the console!</h1>
+    <button id ="arrayTest"> Click here to test them all out!</button>
+
+</body>
+<script>
+    
+    var btn = document.querySelector('#arrayTest');
+
+btn.addEventListener('click', function (){
+  var arr = [1, 2, 3, 4, 5];
+  //The code below prints each element of the array
+  arr.forEach(function(element){
+    console.log(element)
+  });
+  
+  //The code below returns a new array called timesTwo
+  // timesTwo is the original array arr multiplied by 2
+  var timesTwo = arr.map(function (element){
+    return element *2
+   });
+
+   console.log(timesTwo)
+    
+  // The reduce function has an accumulator who's value starts at arr[0] and then we add each element of the array to the accumulator
+  var sum = arr.reduce(function(accumulator, element){
+    return accumulator + element
+  }); 
+  console.log(sum)
+});
+
+
+</script>
+</html>
