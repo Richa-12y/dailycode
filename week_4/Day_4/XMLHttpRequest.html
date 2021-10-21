@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="fetchData()">Fetch API data </button>
+</body>
+<script>
+    function fetchData()
+    {
+
+
+        var xhr = new XMLHttpRequest();
+
+        // This configures the object to perform a GET request to the given url
+        // Notice how we pass page=2
+        xhr.open('GET', 'https://reqres.in/api/users?page=2');
+        // This will send the GET request to the server.
+        xhr.send()
+        // This function will be called after the information is retrieved
+        xhr.onload = function ()
+        {
+            // The HTTP 200 code is returned when your request is successful so we check for that
+            if (xhr.status == 200)
+            {
+                var responseData = JSON.parse(xhr.response)
+                responseData.data.map((item) =>
+                {
+
+                    var selectTag = document.createElement("h3")
+                    selectTag.textContent = item.first_name + " " + item.last_name
+                    selectTag.style.color="blue"
+                    var p = document.querySelector("body")
+                    p.appendChild(selectTag)
+
+
+                    var selectTag2 = document.createElement("h3")
+                    selectTag2.textContent = item.email
+                    selectTag2.style.color="red"
+                    var p = document.querySelector("body")
+                    p.appendChild(selectTag2)
+
+
+                })
+
+
+            }
+            else
+            {
+                console.log("Error Code is:" + xhr.status)
+            }
+        }
+
+    }
+</script>
+
+</html>
