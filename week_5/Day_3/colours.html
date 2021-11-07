@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>colours</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <!-- <style>
+          .h4{
+              border-radius: 5px;
+          }
+    </style> -->
 </head>
 <body>
 
@@ -25,11 +29,11 @@
     
   </div>
   <span class="green">
-
+    change me in green
   </span>
   <span class="red">
-
-</span>
+  change me in red
+  </span>
 
   <p>
       i'm p1
@@ -39,12 +43,12 @@
     i'm p2
     </p>
 
-    <button id=" changeh1">changeh1</button>
-    <button id=" changeh2">changeh2</button>
+    <button id="changeh1">changeh1</button>
+    <button id="changeh2">changeh2</button>
     <button id="changeh3">changeh3</button>
     <button id="changeh4">changeh4</button>
-    <button id=" changediv">changediv</button>
-    <button id=" changep">changep</button>
+    <button id="changediv">changediv</button>
+    <button id="changep">changep</button>
     <button id="changegreen">changegreen</button>
     <button id="changered">changered</button>
 
@@ -52,7 +56,55 @@
 </body>
 <script>
     $("#changeh1").click(function(){
-        $("#h1").css("font-size", "30px");
+        $("#h1").css("font-size", "70px"); 
+
     })
+
+    $("#changeh2").click(function(){
+        $("#h2").css("font-size", "32px"); 
+        $("#h2").css("padding", "10px"); 
+
+
+    })
+    $("#changeh3").click(function(){
+        $("#h3").css("background", "black"); 
+        $("#h3").css("color", "white"); 
+
+
+    })
+
+
+    $("#changeh4").click(function(){
+        $("#h4").css("border-radius","5px") 
+        $("#h4").css("background-color","green"); 
+        $("#h4").css("margin", "10px"); 
+
+
+    })
+
+    $("#changediv").click(function(){
+        $("div").css("padding", "8px 6px 8px 6px"); 
+
+    })
+
+    $("#changep").click(function(){
+        $("p").css("color","purple"); 
+        $("p").css("font-weight","bold"); 
+
+    })
+
+    $("#changegreen").click(function(){
+        $(".green").css("background-color","green"); 
+        $(".green").css("color","white"); 
+        
+    })
+
+    $("#changered").click(function(){
+        $(".red").css("color","red"); 
+
+    })
+
+
+
 </script>
 </html>
