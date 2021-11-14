@@ -62,11 +62,16 @@ p{
   align-items: center;
 }
 .deginButton{
-  width:15%;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 100px 100px;
+  grid-gap: 20px;
+
+  /* width:15%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap:10px;
+  gap:10px; */
 
 
 }
